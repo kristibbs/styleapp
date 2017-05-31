@@ -12,9 +12,13 @@ The molecules and components are designed to be standalone in so far as you shou
 
 Its also great for testing on mobile and browsers, so you can ensure that it all works fine before adding it to the cms. As a bonus, because its angular, changes you make in firebug arent lost as you navigate around the app. So you can see how your changes look on different pages. When happy just add the css to your scss files.
 
-
-
 The idea is that the scss and js files etc will be just sent to the cms, all the styling is done within the app, and the css, js, images are copied via gulp to your website. 
+
+##Install and set up
+clone or unzip into your local folder. 
+Ensure wampp or xampp is running as it requires apache to be running.
+Gulp will need to be installed on your machine. Run npm install --save-dev in the root. This is to get all the node modules installed
+Open browser and navigate to the folder/url.. http://localhost/styleapp for example
 
 Thats a very simple and brief oveview, but more in depth instructions/overview to be added
 
