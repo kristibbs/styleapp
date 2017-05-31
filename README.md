@@ -18,7 +18,9 @@ The idea is that the scss and js files etc will be just sent to the cms, all the
 clone or unzip into your local folder. 
 Ensure wampp or xampp is running as it requires apache to be running.
 Gulp will need to be installed on your machine. Run npm install --save-dev in the root. This is to get all the node modules installed
-Open browser and navigate to the folder/url.. http://localhost/styleapp for example
+Open browser and navigate to the folder/url.. http://localhost/styleapp for example.
+
+The gulp file has reference to the wordpress paths, I have left this to show how easy it is for the files to dynamically update your cms.
 
 Thats a very simple and brief oveview, but more in depth instructions/overview to be added
 
