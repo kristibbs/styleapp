@@ -1,0 +1,27 @@
+[     
+    {   "url": "#molecule-article", 
+        "text": "Basic Article layout",
+        "desc": "Standard article page layout",
+        "includepath": "<div ng-include=\"'app-files/molecules/molecule-article.html'\"></div>"
+    },
+    {   "url": "#molecule-teaser-list", 
+        "text": "Teaser list layout",
+        "desc": "Simple teaser list. Has a linkable title and teaser text",
+        "includepath": "<div ng-include=\"'app-files/molecules/molecule-teaser-lisr.html'\"></div>"
+    },
+    {   "url": "#molecule-links-list", 
+        "text": "list layout",
+        "desc": "Basic list with linkable title and a date ",
+        "includepath": "<div ng-include=\"'app-files/molecules/molecule-links-list.html'\"></div>"
+    },
+    {   "url": "#molecule-primary-navigation", 
+        "text": "Primary navigation",
+        "desc": "The primary navigation layout",
+        "includepath": "<div ng-include=\"'app-files/molecules/molecule-primary-navigation.html'\"></div>"
+    },
+    {   "url": "#molecule-logo", 
+        "text": "Site banner/logo",
+        "desc": "Sites main logo",
+        "includepath": "<div ng-include=\"'app-files/molecules/molecule-logo.html'\"></div>"
+    }
+]

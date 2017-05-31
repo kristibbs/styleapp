@@ -1,0 +1,24 @@
+<h1>Molecules</h1>
+<p>Keeping things modular. Each of these items should be self contained and able to be placed in any area on the website. They each have their own scss file if there is any styling needed beyond that of the base styling and in some cases their own JS file, enabling the look and feel to be easily shifted to a new site.</p>
+<div class="container-fluid sg-organisms ">
+<div class="row">
+<div class="col-md-8 sg-article">
+                    <ul ng-controller="navCtrl">
+                    	<li ng-repeat="molecule in moleculeList | orderBy:'text'">
+                        <h2 ><a href="{{molecule.url}}" ng-click="removeSingleClass()">{{molecule.text}}</a></h2>
+                        	<p>{{molecule.desc}}</p>
+                        </li>
+                        
+                    </ul>
+ </div>
+ <div class="col-md-4">
+ <h2>Include tags</h2>
+ <ul ng-controller="navCtrl">
+                    	<li ng-repeat="molecule in moleculeList | orderBy:'text'">
+                        <h3 >{{molecule.text}}</h3>
+                        	<p>{{molecule.includepath}}</p></li>
+                        
+                    </ul>
+ </div>
+</div>
+</div>

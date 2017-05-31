@@ -1,0 +1,205 @@
+.nav-wrapper {
+  background: $gray-dark;
+  padding: $spacing-gutter;
+  width: 100%;
+  max-width: 100%;
+  //height: 100%;
+  @include bp(m) {
+  height: auto;
+  //min-height: 40vh;
+  }
+}
+
+
+.banner.active .nav-wrapper {
+height: 100vh;
+}
+
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  border: 0 none;
+}
+
+.navbar-nav {
+  @include bp(l) {
+    float: right;
+  }
+}
+.navigation-zone {
+  clear: both;
+  text-align: center;
+  @include bp(l) {
+  clear: none;
+  }
+}
+
+
+kad-header-right {
+  @include bp(m) {
+  display: none;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.nav > li > a {
+  color: $brand-primary;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    }
+
+.navbar-default .navbar-toggle {
+  border: none 0;
+  color: #fff;
+  font-size: $font-icon-large;
+  margin: $spacing-s $spacing-xs;
+  padding: $spacing-s 0;
+}
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: 0;
+    padding: $spacing-s;
+    margin-top: $spacing-s;
+    margin-bottom: $spacing-s;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $border-radius-base;
+
+}
+
+.navbar-collapse {
+    overflow-x: visible;
+    padding-right: $spacing-gutter;
+    padding-left: $spacing-gutter;
+    border: 0 none;
+    box-shadow: none;
+
+}
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-nav .open .dropdown-menu {
+  padding: 0 $spacing-gutter;
+  @include bp(l) {
+  min-width: 250px;
+ }
+}
+
+
+ul.dropdown-menu li {
+  @include borders (
+  $colour: darken($brand-primary, 15%));
+  list-style: outside none none;
+  margin: 4%;
+  text-align: center;
+  @include bp(s) {
+  float: left;
+  width: 46%;
+  margin: 2%;
+  }
+  @include bp(m) {
+  float: left;
+  width: 23%;
+  margin: 1%;
+  }
+    @include bp(l) {
+  float: left;
+  width: 100%;
+  margin: 1%;
+  }
+
+}
+
+.navbar-nav .sf-description {
+  display:none;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+  background: transparent;
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+  background: transparent;
+  color: #fff;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #fff;
+  white-space: pre-wrap;
+  padding: $spacing-s;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a, 
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, 
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+ 
+}
+
+
+
+
+.navbar-toggle span.navi-bar, 
+.navbar-toggle span.navi-bar:before, 
+.navbar-toggle span.navi-bar:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: $brand-primary;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+.navbar-toggle span.navi-bar {
+  position: relative;
+}
+
+
+
+.navbar-toggle span.navi-bar:before {
+  top: -10px; 
+}
+.navbar-toggle span.navi-bar:after {
+  bottom: -10px;
+}
+
+.navbar-toggle span.navi-bar, 
+.navbar-toggle span.navi-bar:before, 
+.navbar-toggle span.navi-bar:after {
+  transition: all 0.3s linear;
+}
+.navbar-toggle.active span.navi-bar {
+  background-color: transparent;
+}
+.navbar-toggle.active span.navi-bar:before, 
+.navbar-toggle.active span.navi-bar:after {
+  top: 0;
+}
+.navbar-toggle.active span.navi-bar:before {
+  transform: rotate(45deg);
+}
+.navbar-toggle.active span.navi-bar:after {
+  transform: rotate(-45deg);
+}

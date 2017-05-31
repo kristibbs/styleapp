@@ -1,0 +1,110 @@
+.cd-btn, .nav-btn {
+	font-size: 28px;
+	text-decoration: none;
+	color: $text-color;
+}
+
+%btn-cta {
+  background: $cta-color;
+  border-radius: 0;
+  overflow: visible;
+  color: #fff;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: $form-item-padding;
+  margin-bottom: 0;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border-radius: 0;
+  border: none 0;
+  width: auto;
+  min-width: $min-btn-width;
+  transition: background 0.3s linear;
+}
+
+.btn:hover {
+  color: $link-hover-color;
+}
+
+.btn:focus, .btn:active {
+  box-shadow: 0px;
+  outline: 0 none;
+}
+
+.btn:focus
+.btn:active:focus
+.btn.active:focus {
+  box-shadow: none;
+  outline: 0 none;
+}
+
+
+.btn-primary {
+  background: $cta-color;
+    &:hover {
+      background: $cta-color-hover;
+      color: $brand-white;
+  }
+    &:active {
+      background: $cta-color-hover;
+      color: $brand-white;
+  }
+    &:focus {
+      background: $cta-color-hover;
+      color: $brand-white;
+  }
+}
+
+.btn-default {
+  background: $btn-color;
+  color: $brand-white;
+  border: 0 none;
+  &:hover {
+    background: $btn-color-hover;
+    color: $brand-white;
+  }
+}
+
+.btn-remove {
+  background: $brand-warning;
+  color: $brand-white;
+  &:hover {
+    color: $brand-white;
+    background: darken($brand-warning, 20%);
+  }
+}
+
+
+
+a.btn {
+	text-decoration: none;
+}
+
+input.btn {
+background: #aaa;
+}
+
+input.btn[type="submit"],
+input.btn[type="button"] {
+	background: $cta-color;
+  &:hover {
+    background: $cta-color-hover;
+    color: $brand-white;
+  }
+
+  @include bp(maxmob) {
+    width: 100%;
+    white-space: normal;
+  }
+	
+}

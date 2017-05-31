@@ -1,0 +1,39 @@
+.footer {
+background: $secondary-color;
+padding: $spacing-gutter;
+}
+
+footer h5 {
+	text-align: center;
+	color: #fff;
+	margin-bottom: $spacing-s;
+	@include bp(m) {
+		text-align: left;
+	}
+}
+
+footer ul {
+@include no-bullet();
+}
+
+footer ul li a {
+	font-size: $font-size-small;
+}
+
+footer ul li {
+	text-align: center;
+	@include bp(m) {
+		text-align: left;
+	}
+}
+
+.footer-social ul {
+	display: block;
+}
+
+
+.footer-social ul li {
+	display: inline;
+	float: left;
+	width: auto;
+}

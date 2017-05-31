@@ -1,0 +1,11 @@
+<h1>Templates</h1>
+<div class="container-fluid sg-organisms sg-article">
+<div class="row">
+                    <ul ng-controller="navCtrl">
+                    	<li ng-repeat="template in templateList">
+                        <h2 ><a href="{{template.url}}" ng-click="removeSingleClass()">{{template.text}}</a></h2>
+                        	<p>{{template.desc}}</p></li>
+                        
+                    </ul>
+</div>
+</div>

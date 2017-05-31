@@ -1,0 +1,115 @@
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+   //overflow-x: hidden;
+    //height: 100%;
+   min-height: 100%;
+}
+
+.header-main, .page-wrapper, .footer-main {
+	//padding: $spacing-gutter $spacing-m;
+	width: 100%;
+	margin: auto;
+	@include bp(m) {
+		width: 100%;
+		//padding: $spacing-gutter;
+	}
+}
+.header-main {
+	background: rgba(0,0,0,0.6);
+	//height: 60vh;
+	@include bp(l) {
+		//background: transparent;
+	}
+}
+
+.header-main {
+	background: rgba(0,0,0,0.6);
+	//height: 60vh;
+	@include bp(l) {
+		background: transparent;
+	}
+}
+
+//main content
+.site-wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+section.blockmodule {
+	width: 100%;
+	display: table;
+	max-width: $max-site;
+	margin: auto;
+	&.blockmodule-full {
+		max-width: 100%;
+	}
+}
+
+.full-width-container {
+	max-width: 100%;
+}
+
+#content .entry-content {
+	//padding-top: $spacing-s;
+}
+
+.content-wrapper {
+	//padding: 0 $spacing-gutter;
+	@include bp(m) {
+		padding: 0;
+	}
+}
+
+.main {
+	@include bp(l) {
+	//padding-bottom: $spacing-xl;
+	}
+}
+
+header.page-header {
+	margin: $spacing-m 0 $spacing-s;
+}
+
+//background corrections
+.grey-background {
+	@include bp(m) {
+	background: $background-base;
+}
+}
+
+.secondary-background {
+	@include bp(m) {
+	background: $secondary-color;
+}
+}
+
+.fill-one {
+		@extend .grey-background;
+}
+
+.fill-two {
+		@extend .secondary-background;
+}
+
+// sidebar
+.sidebar {
+    margin-top: $spacing-l;
+    border-top: 1px solid $gray;
+    padding-top: $spacing-l;
+    @include bp(l) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0 none;
+    }
+    }

@@ -1,0 +1,145 @@
+html, 
+body {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $text-color;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-headers;
+  clear: both;
+  margin: 0; //reset margins
+  color: $text-color; 
+}
+
+
+h1, h1.entry-title {
+  font-size: $font-size-h1;
+  color: $text-color;
+}
+
+h1.page-title {
+	font-size: $font-size-h1;
+}
+
+h2 {
+	font-size: $font-size-h2;
+  margin-top: $spacing-s;
+}
+
+h3 {
+	font-size: $font-size-h3;
+  margin-top: $spacing-s;
+}
+
+.blockmodule h3 {
+  margin-top: 0;
+}
+
+h4 {
+	font-size: $font-size-h4;
+}
+
+h4 a {
+  font-weight: 500;
+}
+
+h5, h5 a {
+	font-size: $font-size-h5;	
+  color: $gray;
+  line-height: $line-height-base;
+}
+
+h6 {
+	font-size: $font-size-h6;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	a {
+	text-decoration: none;
+	}
+}
+
+p {
+   font-weight: $font-weight-light;
+   line-height: $line-height-large;
+   margin-bottom: 15px;
+}
+
+//for intro paras etc
+.intro {
+  font-weight: $font-weight-bold;
+}
+
+//theme fix, incorrect class name for screen reader
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+ a, %ph-link {
+transition: color 0.3s linear;
+font-weight: $font-weight-medium;
+ }
+
+a:hover,
+%ph-hover-link {
+  color: $link-hover-color;
+  text-decoration: none;
+}
+
+a:active, a:hover, a:focus {
+    outline: 0 none;
+}
+
+blockquote {
+  font-size: $font-size-h4;
+}
+
+
+//increase those font sizes for larger screens
+@media screen and (min-width: $bp2) {
+h1, h1.entry-title {
+    font-size: $font-size-large;
+    }
+    h1.page-title {
+    font-size: $font-size-large;
+    }
+
+h2 {
+  font-size: $font-size-h1;
+  margin-top: $spacing-m;
+}
+h3 {
+  font-size: $font-size-h2;
+  margin-top: $spacing-m;
+}
+h4 {
+  font-size: $font-size-h3;
+}
+h5 {
+  font-size: $font-size-h4;
+}
+h6 {
+  font-size: $font-size-base;
+}
+
+}
+
+//helper classes for color changes
+.text-white {
+  color: $brand-white;
+}
+
+.text-black {
+  color: $text-color;
+}

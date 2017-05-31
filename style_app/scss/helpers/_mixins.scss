@@ -1,0 +1,210 @@
+//mixins
+
+// Mixin for easy media queries: @include bp(m) {};
+@mixin bp ($bp) {
+  @if $bp == xl {
+    @media (min-width: $bp4) { @content ; }
+  }
+  @else if $bp == l {
+    @media (min-width: $bp3) { @content ; }
+  }
+  @else if $bp == m {
+    @media (min-width: $bp2) { @content ; }
+  }
+  @else if $bp ==  s {
+    @media (min-width: $bp1)  { @content ; }
+  }
+  @else if $bp == maxmob {
+    @media (max-width: $bp1)  { @content ; }
+
+  }
+}
+
+
+@mixin promo ($promo) {
+  @if $promo == prone {
+    background: url('/images/backgrounds/callout-overlay1.jpg') no-repeat; 
+    background-size: cover;
+  }
+  @else if $promo == prtwo {
+    background: url('/images/backgrounds/callout-overlay2.jpg') no-repeat; 
+    background-size: cover;
+  }
+  @else if $promo == prthree {
+    background: url('/images/backgrounds/callout-overlay3.jpg') no-repeat; 
+    background-size: cover;
+  }
+  @else if $promo ==  prfour {
+    background: url('/images/backgrounds/callout-overlay4.jpg') no-repeat; 
+    background-size: cover;
+  }
+  @else if $promo == prfive {
+    background: url('/images/backgrounds/callout-overlay5.jpg') no-repeat; 
+    background-size: cover;
+  }
+}
+
+
+
+@mixin triangle-bottom ($border-style: solid, $border-width: 15px 15px 0px 15px, $border-color: $brand-white transparent transparent transparent) {
+    width: 0;
+    height: 0;
+    border-style: $border-style;
+    border-width: $border-width;
+    border-color: $border-color;  
+}
+
+@mixin triangle-left ($border-style: solid, $border-width: 15px 0px 15px 15px, $border-color: transparent transparent transparent $brand-white ) {
+    width: 0;
+    height: 0;
+    border-style: $border-style;
+    border-width: $border-width;
+    border-color: $border-color;  
+}
+
+
+// Standard border mixin
+@mixin borders($colour: $gray-lighter, $width: 1px, $style: solid) {
+ border-width: $width;
+ border-style: $style;
+ border-color: $colour;
+}
+
+// Separator style for archive/search listing pages. Apply to the LI
+@mixin archive-listing {
+  margin-bottom: $spacing-l;
+  padding-bottom: $spacing-l;
+  border-bottom: 1px dotted $gray-lighter;
+}
+
+// Standard transitions mixin
+@mixin transitions ($property: all, $duration: 0.3s, $function: ease-out, $delay: 0s) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $function;
+  transition-delay: $delay;
+}
+
+//Remove bullets from lists
+@mixin no-bullet {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+//*For when flexbox required. This creates equal height boxes
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+// Flexbox children, associated with above mixin. For equal heights
+@mixin flexbox-child() {
+ -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    flex-grow: 1%;
+    -webkit-flex: 1 1 1%;
+    -ms-flex: 1 1 1%;
+    flex: 1 1 1%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+
+//Replace the default slide in mixin 
+@include keyframes(slideInRight) {
+  0% {
+    opacity: 1;
+    @include transform(translateX(200px));
+  }
+  100% {
+    @include transform(translateX(0));
+  }
+}
+
+// Replace the default slide down mixin
+@include keyframes(slideInDown) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(-40px));
+  }
+  100% {
+    @include transform(translateY(0));
+  }
+}
+
+// Lets create a mixin to match the col 6 layout. As node sass has fixed their bug which
+// previously allowed us to just include the class
+@mixin twocol($width: 50%, $float: left, $position: relative, $min-height: 1px) {
+//@mixin twocol {
+  width: $width;
+  float: $float;
+  position: $position;
+  min-height: $min-height;
+}
+
+@mixin threecol {
+  width: 33.33333%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+
+@mixin fourcol {
+  width: 25%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+
+@mixin lg-five {
+  width: 41.66667%;
+  min-height: 1%;
+}
+
+@mixin offsetone {
+  margin-left: 8.33333%;
+}
+
+//silent placeholder for social icons 
+%share-icon {
+  font-size: 0;
+  margin-right: $spacing-m;
+  padding: 0;
+  //width: 38px;
+  //height: 38px;
+  &:after {
+  font-family: $font-icon;
+  content: "\f1e0";
+  font-size: $font-icon-large;
+  background: #fff;
+  display: inline-block;
+  height: 37px;
+  width: 39px;
+  border-radius: 60%;
+  background-position: 50% center;
+  line-height: 0.8em;
+  margin-left: 2px;
+}
+&:hover {
+  &:after{
+  color: $gray;
+}
+}
+}

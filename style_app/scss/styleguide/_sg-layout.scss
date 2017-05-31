@@ -1,0 +1,354 @@
+//styleguide layout
+.menu-btn-wrapper {
+text-align: right;
+	display: inline-block;
+width: 100%;
+z-index: 1000;
+padding: $spacing-s;
+//top: 0;
+}
+
+.menu-btn-wrapper span {
+cursor: pointer;
+float: right;
+	i {
+display: block;
+font-size: $font-icon-large;
+	}
+}
+
+.close-btn {
+    text-align: right;
+    /* display: block; */
+    top: 0;
+    cursor: pointer;
+    padding: $spacing-xs $spacing-s;
+    position: absolute;
+    //background: rgba(0,0,0,0.8);
+    //left: -56px;
+    right: 0;
+	i {
+	font-size: $font-icon-large;
+	color: #fff;
+	}
+}
+
+
+
+.styleguide-wrapper {
+//padding: 0 $spacing-gutter;
+	@include bp(m) {
+	margin: auto;
+	
+	//max-width: 1300px;
+}
+}
+
+.styleguide-wrapper .blockmodule {
+	margin-bottom: $spacing-l;
+	padding: $spacing-s;
+	&:last-child {
+		//padding-bottom: 0;
+	}
+	@include bp(m) {
+		margin-bottom: 0;
+		padding-bottom: $spacing-xl;
+		padding-top: $spacing-xl;
+	}
+} 
+
+
+
+.styleguide .top-strap {
+	width: 100%;
+	display: block;
+}
+
+.styleguide aside.sidebar {
+@include bp(m) {
+
+}
+}
+
+.styleguide section.main-two-col {
+@include bp(m) {
+
+}
+}
+// colours
+ul.sg-colours {
+ list-style-type: none;
+ display: inline-block;
+ width: 100%;
+ list-style: none;
+ padding-left: 0;
+li {
+    padding: 0;
+    display: inline;
+	margin-bottom: 0 0 $spacing-m;
+	width: 100%;
+	float: left;
+	@include bp(m) {
+	width: 50%;
+	}
+	@include bp(l) {
+	width: 25%;
+	}
+		.sg-colour {
+		display:block;
+		width: 90%;
+		height: 90px;
+		float: left;
+		margin-right: $spacing-m;
+		position: relative;
+		@include bp(m) {
+		//width: 100px;
+		height: 100px;
+		}
+		}
+	}
+}
+.sg-colours-row {
+	display: block;
+}
+.sg-colour-name {
+font-size: $font-size-h6;
+position: absolute;
+bottom: 0;
+right: 0;
+left: 0;
+background: $overlay-black;
+color: #fff;
+text-align: center;
+}
+
+.sg-colour-desc {
+clear: left;
+}
+
+// fonts
+ul.sg-fonts {
+}
+
+ul.sg-fonts li {
+	&.sg-font-light {	
+	font-weight: $font-weight-light;
+}
+	&.sg-font-medium {	
+	font-weight: $font-weight-medium;
+}
+	&.sg-font-bold {
+	font-weight: $font-weight-bold;
+}
+}
+ul.sg-fonts li span {
+margin-left: $spacing-m;
+}
+
+.font-serif, ul.font-serif li { 
+font-family: $font-family-serif;
+}
+
+.font-sans-serif, ul.font-sans-serif li {
+	font-family: $font-family-sans-serif;
+	}
+
+
+.sg-backgrounds {
+	list-style: none;
+	padding-left: 0;
+	 li {
+	float: left;
+    display: block;
+    margin: 1%;
+    width: 48%;
+    height: 190px;
+    position: relative;
+    	span {
+    		position: absolute;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    		background: $overlay-black;
+    		color: $brand-white;
+    		padding: $spacing-xs;
+    	}
+	 }
+}
+.sg-backgrounds .promo-one {
+	@include bp(m) {
+		background: url('../images/backgrounds/callout-overlay1.jpg') no-repeat;
+		background-size: cover;
+		//@include promo(prone);
+	}
+}
+
+.sg-backgrounds .promo-two {
+	@include bp(m) {
+		background: url('../images/backgrounds/callout-overlay2.jpg') no-repeat;
+		background-size: cover;
+		//@include promo(prtwo);
+	}
+}
+
+.sg-backgrounds .promo-three {
+	@include bp(m) {
+		background: url('../images/backgrounds/callout-overlay3.jpg') no-repeat;
+		background-size: cover;
+		//@include promo(prthree);
+	}
+}
+
+.sg-backgrounds .promo-four {
+	@include bp(m) {
+		background: url('../images/backgrounds/callout-overlay4.jpg') no-repeat;
+		background-size: cover;
+		//@include promo(prfour);
+	}
+}
+
+.sg-backgrounds .promo-five {
+	@include bp(m) {
+		background: url('../images/backgrounds/callout-overlay5.jpg') no-repeat;
+		background-size: cover;
+		//@include promo(prfive);
+	}
+}
+
+// overrides for styleguide
+.top-header {
+	@include bp(m) {
+	}
+	@include bp(l) {
+		position: relative;
+	}
+}
+
+
+
+.sg-tabs {
+
+}
+
+.sg-tabs ul.nav-tabs {
+	float: left;
+    width: 20%;
+    border: 0;
+	
+}
+.sg-tabs li {
+width: 100%;
+}
+
+.sg-tabs .nav-tabs > li > a, 
+.sg-tabs .nav-tabs > li > a:hover, 
+.sg-tabs .nav-tabs > li > a:focus { 
+border: none 0;
+}
+
+
+%atom-icons {
+	font-family: $font-icon;
+	margin-right: $spacing-s;
+	font-size: $font-size-nav-mob;
+	display: block;
+	text-align: center;
+	@include bp(m) {
+	display: inline;
+	text-align: left;
+	}
+	
+}
+
+
+.sg-tabs {
+.atom-colours a:before {
+	@extend %atom-icons;
+	content: "\f1fc";
+}
+.atom-fonts a:before {
+	@extend %atom-icons;
+	content: "\f031";
+}
+
+.atom-quote a:before {
+	@extend %atom-icons;
+	content: "\f10d";
+}
+
+.atom-form a:before {
+	@extend %atom-icons;
+	content: "\f15c";
+}
+.atom-button a:before {
+	@extend %atom-icons;
+	content: "\f15c";
+}
+
+.atom-button a:before {
+	@extend %atom-icons;
+	content: "\f10c";
+}
+
+
+.atom-image a:before {
+	@extend %atom-icons;
+	content: "\f03e";
+}
+.atom-social a:before {
+	@extend %atom-icons;
+	content: "\f1e1";
+}
+}
+
+
+.sg-tabs .nav-tabs > li.active > a, 
+.sg-tabs .nav-tabs > li.active > a:hover, 
+.sg-tabs .nav-tabs > li.active > a:focus {
+border: none 0;
+
+}
+
+
+.sg-tabs .nav-tabs li a {
+background: none;
+border: none 0;
+font-size: 0;
+@include bp(m) {
+	font-size: $font-size-base;
+}
+}
+
+.sg-tabs .sg-tabbed-titles {
+	
+}
+.sg-tabs  .tab-content {
+width:80%;
+float: right;
+}
+
+.sg-article ul {
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    display: flex;
+	
+}
+
+.sg-article ul li {
+	//padding: $spacing-l;
+	margin: $spacing-m;
+	//flex: 1 0 auto;
+	width: 100%;
+	@include bp(m) {
+	width: 25%;
+	}
+}
+
+.sg-article a {
+	
+}
+
+.sg-article {
+	
+}

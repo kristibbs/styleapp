@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+	<div class="header-wrapper"><!-- reserved for header area-->
+		<div class="container-fluid full-width-container">
+			<div class="row">
+				<section>
+	   				<div ng-include="'app-files/organisms/organism-header.html'"></div>    
+				</section>	
+			</div>
+		</div>
+	</div><!--end of header area-->
+
+	<!--central content area-->
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<section class="blockmodule">
+					<div class="col-sm-12 col-md-8">
+    						<section class="main">
+        						<div ng-include="'app-files/molecules/molecule-article.html'"></div>
+        						<div ng-include="'app-files/atoms/sharing-buttons.html'"></div>
+    						</section>     
+					</div>
+					<div class="col-sm-12 col-md-4"><!-- prep the sidebar-->
+						<aside class="main-sidebar sidebar">         
+        					<div ng-include="'app-files/molecules/molecule-links-list.html'"></div>
+						</aside>
+					</div>
+				</section>
+			</div>
+		</div>
+ 	</div>
+
+ 	<!--footer-->
+ 	<div class="container-fluid full-width-container footer">
+		<div class="row">
+			<section class="blockmodule">
+				<div>
+ 					<div ng-include="'app-files/organisms/organism-footer.html'"></div>
+ 				</div>
+			</section>
+		</div>
+	</div>
+</div>

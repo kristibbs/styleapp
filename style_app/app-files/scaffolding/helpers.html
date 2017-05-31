@@ -1,0 +1,11 @@
+<h1>Helpers</h1>
+<div class="container-fluid sg-organisms sg-article">
+<div class="row">
+                    <ul ng-controller="navCtrl">
+                    	<li ng-repeat="help in helperList">
+                        <h2 ><a href="{{help.url}}" ng-click="removeSingleClass()">{{help.text}}</a></h2>
+                        	<p>{{help.desc}}</p></li>
+                        
+                    </ul>
+</div>
+</div>

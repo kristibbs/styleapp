@@ -1,0 +1,11 @@
+<h1>Pages</h1>
+<div class="container-fluid sg-organisms sg-article">
+<div class="row">
+                    <ul ng-controller="navCtrl">
+                    	<li ng-repeat="page in pagesList">
+                        <h2 ><a href="{{page.url}}" ng-click="removeSingleClass()">{{page.text}}</a></h2>
+                        	<p>{{page.desc}}</p></li>
+                        
+                    </ul>
+</div>
+</div>

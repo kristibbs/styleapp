@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="styleApp">
+  <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Styleguide</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styleguide.css">
+        <script src="js/vendor/modernizr-custom.js"></script>
+          <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+       <!--<base href="/angularstyle">-->
+    </head>
+     <!--<div ng-include="'scaffolding/header.html'"></div>-->
+
+
+    <body class="styleguide">
+        <div class="styleguide-wrapper" ng-controller="mainCtrl">
+            <div class="top-strap">
+                
+
+            </div>
+            
+        <section class="main">
+<div class="menu-btn-wrapper"><span ng-click="toggleSingleClass()"><i type="button" class="fa fa-bars"></i></span></div>
+
+     
+    <div ng-include="'app-files/scaffolding/sidebar.html'"  class="off-canvas" ng-class="{'active': class_status}" >
+                </div>
+<div ng-view>
+
+</div>
+
+        </section>
+    </div><!--close wrapper-->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.5.js"></script>
+    <script src="app-files/js/application.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="app-files/js/app-scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+//generic tidy up
+input,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+//form
+form {
+  clear: both;
+}
+
+.control-group, %form-control-group {
+  margin-bottom: $spacing-m;
+}
+
+.form-control, %form-control {
+  display: block;
+  width: 100%;
+  height: $form-height; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: $form-item-padding-vertical $spacing-xs;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-image: none;
+  @include borders();
+  border-radius: 0;
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $gray;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+}
+
+.control-group .controls {
+  margin-bottom: $spacing-m;
+}
+
+
+
+
+//labels
+label {
+  color: $text-color;
+  font-size: $font-size-h6;
+  line-height: 1;
+  margin-bottom: $spacing-s;
+  display: inline-block;
+  max-width: 100%;
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: $font-weight-medium;
+ // cursor: pointer;
+}
+
+
+//labels inline 
+
+.radio.inline, 
+.checkbox.inline, 
+%inline-labels {
+  display: inline;
+  padding-top: 5px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+//possible placeholder solution
+.placeholder form label {
+  display: none;
+}
+
+//these labels to always show
+.placeholder form .form-type-checkbox label,
+.placeholder form .form-type-radio label{
+  display: inline-block;
+}
+
+//general input
+input {
+  line-height: $form-item-line-height;
+  width: 100%;
+  max-width: 100%;
+  font-size: $form-item-font-size;
+  color: $gray-dark;
+}
+
+
+//checkbox and radio
+input[type=checkbox],
+input[type=radio],
+.radio input[type=radio],
+.checkbox input[type=checkbox] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin-left: 0;
+  margin-top: 1px \9;
+  line-height: normal;
+  position: relative;
+  display: inline;
+  width: auto;
+  height: auto;
+}
+
+//textarea
+textarea {
+  overflow: auto;
+  height:auto;
+}
+
+
+//fieldset
+fieldset {
+  //margin-bottom: $spacing-xl;
+  //padding: $spacing-l;
+}
+
+//.fieldset-wrapper {
+ // @include borders();
+ // padding: $spacing-l;
+//}
+
+
+//legend
+legend {
+  border: 0 none;
+  color: $gray-dark;
+  display: block;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-medium;
+  line-height: inherit;
+  padding: $spacing-m;
+  width: 100%;
+  background: $gray-light;
+}
+
+
+// input type file
+input[type=file] {
+  display: block;
+}
+
+//input focus
+input[type=file]:focus,
+input[type=checkbox]:focus,
+input[type=radio]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+input[type=submit] {
+  @extend %btn-cta;
+    //display: block;
+   // margin: auto;
+   // padding: $spacing-m;
+   // white-space: normal;
+    width: auto;
+    //max-width: $max-btn-width;
+   // height: auto;
+   transition: background 0.3s linear;
+   &:hover {
+
+    background: $cta-color-hover;
+    color: $brand-white;
+  
+   }
+  }
+
+//input[type=text], 
+input {
+  display: inline-block;
+  width: 100%;
+  //height: 34px;
+  padding: $form-item-padding;
+  font-size: $form-item-font-size;
+  line-height: $form-item-line-height;
+  color: $gray-dark;
+  background-color: #fff;
+  background-image: none;
+  @include borders();
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus {
+  border-color: $gray-lighter;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+input[type=text]::-moz-placeholder {
+  color: $gray-lighter;
+  opacity: 1;
+  font-weight: bold;
+}
+
+input[type=text]:-ms-input-placeholder {
+  color: $gray-lighter;
+  font-weight: bold;
+}
+
+.asteriskField {
+color: $brand-danger;
+}
+
+.form-group, .form-item {
+  margin-bottom: $spacing-m;
+}
+
+input[type=checkbox][disabled],
+input[type=radio][disabled] {
+  cursor: not-allowed;
+}
+
+//appended input box, for search and the like
+.input-append, .input-prepend {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+  }
+
+.form-search .input-append, 
+.form-inline .input-append, 
+.form-horizontal .input-append {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.input-append input {
+    position: relative;
+    border-radius: 4px 0 0 4px;
+}
+.input-append .add-on {
+margin-left: -1px;
+  display: inline-block;
+  width: auto;
+  //height: 20px;
+  min-width: 16px;
+  padding: $form-item-padding;
+  font-size: $form-item-font-size;
+  font-weight: normal;
+  line-height: $form-item-line-height;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+.input-append .add-on:last-child  {
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  vertial-align: top;
+}
+
+.checkbox.disabled label,
+.radio.disabled label {
+  cursor: not-allowed;
+}
+
+@-ms-viewport {
+  width: device-width;
+}

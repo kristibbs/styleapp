@@ -1,0 +1,114 @@
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>App Developer Guide</h1>
+
+<h2>Atoms</h2>
+<p>Atoms are the building blocks. This is where we set up the following: </p>
+<ul>
+<li>Colours</li>
+<li>Typography</li>
+<li>Blockqoute</li>
+<li>Form Items</li>
+<li>Buttons</li>
+<li>Images</li>
+<li>Social media buttons</li>
+<li>Tables</li>
+</ul>
+
+<p>The sass files for these items are in the styling/scss/atoms folder with the exception of the colours, which are just variables in styling/scss/helpers folder (_site-variables.scss)</p>
+
+<p>To change any of the atoms, go to styling/app-files/atoms and edit the appropriate html file</p>
+
+<h2>Molecules</h2>
+
+<p>Simple, small components that can either work as self contained components, or as part of a larger organism. Pagination, teaser lists, promoted content blocks are all examples of molecules</p>
+
+<h3>Creating a molecule</h3>
+<ul>
+<li>Create an empty html file and save it in styling/app-files/molecules</li>
+<li>Create your markup in the file. There is no need to create wrappers, or containers here as they will be covered when you inject them into the page. All you are adding here is the basic markup for the block itself. Save and close</li>
+<li>If you want this file to be accessed via the style app you will need to add a reference to it in the molecules json file. This is at styling/app-files/js/json/molecules.json. Simply add the entry to the bottom. Create a url for it (eg #module-url), text (eg mynewmodulename) and a short description.</li>
+<li>Finally add a reference to it in the angular app. styling/app-files/js/application.js. Find the molecules list and add it in as follows:
+<p><code>            .when('/mynewmodulename', {
+                templateUrl : 'app-files/molecules/module-name.html',
+            })</code>
+</p>
+<p>Replacing the references where appropriate</p>
+</li>
+<li>You molecule will now be accessible via the apps nav menu. You should then use this page to develop and style your module as a single self contained component. Each module should have its own sass file and js file, and they should share the same names to make it easy to identify what is related to what. so mymodule.html, mymodule.scss, mymodule.js. A lot of the styling may be covered by the atoms, so the styling needed will just be an extension of the existing styling. </li>
+</ul>
+
+<h2>Components</h2>
+<p>Components are similar to molecules, but they are generally a more complicated and larger components, sometimes they are a combination of smaller molecules that form a component. Main navigation, tabbed content and the homepage latest news cluster are examples of an organism. </p>
+<p>An example of where an organism is a collection of modules could be the footer area. This may be simply three lists combined to form a 3 column bootstrap layout</p>
+<p>Creating an organism is the same as a molecule except the naming will be organism rather than module</p>
+<p>A sass file will probably be needed, but not on every occasion, as if it is a collection of modules, then the styling will be covered by the modules.</p>
+
+<h2>Templates</h2>
+<p>Templates are a collection of all of the above, and any coding should be completed by now. You are pretty much just adding includes to a blank html file. Generally there will be 3 parts, the header, content and footer, wrapped in a page-wrapper class:</p>
+<p>Templates should not contain actual content or real images. The aim is create very fast prototypes that can be changed and adapted, like a advanced form of wireframing. It is here that ideas can be signed off or rejected</p>
+<p>At this stage there should be very little or no component styling required. Its just a case of pasting in and perhaps trying different molecules or organisms. More a case of playing with what should appear on the page and in what position</p>
+<p>You will need to add any new templates to the app as per the above process.. create an html file, add to the json, add to the angular application.js file</p>
+
+<h3>Header snippet</h3>
+<code>
+&lt;div class="page-wrapper"&gt;  &lt;!--wraps the entire page --&gt;<br />
+	&lt;div class="header-wrapper"&gt; &lt;!-- wraps the header --&gt;<br />
+		&lt;div class="container-fluid full-width-container"&gt; &lt;!--every area needs to be in a container--&gt;<br />
+			&lt;div class="row"&gt;<br />
+				&lt;section&gt; &lt;!--sections separate the includes --&gt;<br />
+	   				&lt;div ng-include="'include file here'"&gt;&lt;/div&gt; &lt;!--include the molecule or organism --&gt;<br />
+				&lt;/section&gt;<br />
+			&lt;/div&gt;<br />
+		&lt;/div&gt;<br />
+	&lt;/div&gt;<br />
+
+</code>
+<h3>Main content snippet</h3>
+<code>
+&lt;!--central content area--&gt;<br />
+	&lt;div class="content-wrapper"&gt; &lt;!-- wrap the central content --&gt;<br />
+		&lt;section class="blockmodule"&gt; &lt;!-- blockmodule. Important. This ensures the content doesnt fill the whole width --&gt;<br />
+			&lt;div class="container-fluid"&gt;<br />
+				&lt;div class="row"&gt;<br />
+					&lt;div class="col-sm-12 col-md-8"&gt; &lt;!--col-md-12 ensures nice padding on mob --&gt;<br />
+    					&lt;section class="main"&gt;<br />
+        					&lt;div ng-include="'app-files/organisms/article.html'"&gt;&lt;/div&gt; &lt;!--include the article molecule --&gt;<br />
+        					&lt;div ng-include="'app-files/atoms/sharing-buttons.html'"&gt;&lt;/div&gt; &lt;!--include the sharing buttons --&gt;<br />
+    					&lt;/section&gt;     	<br />
+					&lt;/div&gt;<br />
+					&lt;div class="col-sm-12 col-md-4"&gt;&lt;!-- prep the sidebar--&gt;<br />
+						&lt;aside class="main-sidebar sidebar"&gt;         <br />
+        					&lt;div ng-include="'app-files/organisms/four-block-news.html'"&gt;&lt;/div&gt; &lt;!--include the four news block organism --&gt;<br />
+						&lt;/aside&gt;<br />
+					&lt;/div&gt;<br />
+				&lt;/div&gt;<br />
+			&lt;/div&gt;<br />
+		&lt;/section&gt;<br />
+ 	&lt;/div&gt;<br />
+ </code>
+<h3>Footer snippet</h3>
+<code>
+ 	&lt;!--footer--&gt;<br />
+ 	&lt;div class="container-fluid full-width-container footer"&gt;<br />
+		&lt;div class="row"&gt;<br />
+			&lt;section class="blockmodule"&gt;<br />
+				&lt;div&gt;<br />
+ 					&lt;div ng-include="'app-files/organisms/footer.html'"&gt;&lt;/div&gt;  &lt;!-- Include the footer organism --&gt;<br />
+ 				&lt;/div&gt;<br />
+			&lt;/section&gt;<br />
+		&lt;/div&gt;<br />
+	&lt;/div&gt;<br />
+&lt;/div&gt;
+</code>
+
+
+
+<h2>Pages</h2>
+<p>We can now start adding real content and images where possible. There is no individual styling at this stage. Its just a case of copying the templates to the pages folder</p>
+<p>You will need to add any new templates to the app as per the above process.. create an html file, add to the json, add to the angular application.js file</p>
+<p>When adding the real content, this will mean adding real content to the molecules and components. Now we dont want to add real content to the base ones, as this will affect the templates, and it will be a real pain when reusing the components for future projects. So the molecules and organsims html folders have a production folder within them. Simple copy the components you are using to these folders and edit the content there. All page templates will have the reference to the production "'app-files/organisms/production/article.html'"  in the include. </p>
+</div>
+</div>
+</div>

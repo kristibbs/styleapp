@@ -1,0 +1,23 @@
+<h1>Organisms</h1>
+<p>Keeping things modular. Each of these items should be self contained and able to be placed in any area on the website. They each have their own scss file and in some cases their own JS file, enabling the look and feel to be easily shifted to a new site.</p>
+<div class="container-fluid sg-organisms">
+<div class="row">
+<div class="col-md-8 sg-article">
+                    <ul ng-controller="navCtrl">
+                    	<li ng-repeat="organism in organismList | orderBy:'text'">
+                        <h2 ><a href="{{organism.url}}" ng-click="removeSingleClass()">{{organism.text}}</a></h2>
+                        	<p>{{organism.desc}}</p></li>
+                        
+                  </ul>
+ </div>
+ <div class="col-md-4">
+ <h2>Include tags</h2>
+ <ul ng-controller="navCtrl">
+                    	<li ng-repeat="organism in organismList | orderBy:'text'">
+                        <h3 >{{organism.text}}</h3>
+                        	<p>{{organism.includepath}}</p></li>
+                        
+                    </ul>
+ </div>
+</div>
+</div>

@@ -1,0 +1,90 @@
+table {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	text-align: left;
+}
+
+thead {
+	background: $gray;
+	color: #fff;
+}
+
+tbody {
+	
+}
+
+tr {
+&.odd {
+	background: $gray-light;
+}
+}
+
+
+th,td {
+	font-size: $font-size-small;
+	padding: $padding-base-vertical $spacing-xs;
+}
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+//stop the table being all.. you know, like a table
+table.responsive-table {
+	display: block;
+
+	thead, tbody, th, td, tr {
+		display: block;
+	}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+ thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+tr { margin-bottom: 2rem; padding-bottom: 2rem; }
+	
+td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #ccc; 
+		position: relative;
+		padding-left: 50%; 
+		min-height: 45px;
+	}
+	
+td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		//top: 6px;
+		font-weight: bold;
+		left: 6px;
+		width: 45%; 
+		padding-right: $spacing-s; 
+		//white-space: nowrap;
+	}
+
+
+td a {
+		color: #000;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	/*
+	Label the data
+	*/
+//td:nth-of-type(1):before { content: "Animal"; }
+//td:nth-of-type(2):before { content: "Vegetable"; }
+//td:nth-of-type(3):before { content: "Mineral"; }
+
+
+}
+
+}

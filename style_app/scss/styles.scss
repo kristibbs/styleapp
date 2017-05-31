@@ -1,0 +1,26 @@
+@import "helpers/site-variables";
+//core styling, frameworks, cms overrides
+@import "core/bootstrap-custom"; //import bootstrap
+@import "core/bootstrap-core";  //bootstrap overrides
+@import "helpers/animations/animate";
+@import "helpers/mixins";
+@import "core/layout";   
+
+
+//install atoms
+@import "atoms/typography";
+@import "atoms/lists";
+@import "atoms/buttons";
+@import "atoms/forms";
+@import "atoms/images";
+@import "atoms/tables";
+@import "atoms/media-share";
+
+
+//Molecules
+@import "molecules/sidebar-menu";
+
+//Organisms
+@import "organisms/nav";
+@import "organisms/tabs";
+@import "organisms/footer-nav";

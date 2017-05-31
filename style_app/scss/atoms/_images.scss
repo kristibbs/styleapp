@@ -1,0 +1,40 @@
+
+.site-logo {
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+// IE Edge has issues with redrawing the image sizes 
+.flexbox .thumbnail > img, 
+.flexbox .thumbnail a > img {
+	width: 100%;
+}
+
+img.article-image {
+	margin: $spacing-xs 0 $spacing-m;
+	width: 100%;
+}
+
+.embed-article-img {
+	max-width: 100%;
+	@include bp(m) {
+	}
+	@include bp(l) {
+	max-width: 50%;
+	}
+}
+
+.pull-right.embed-article-img {
+	margin: $spacing-s 0 $spacing-s $spacing-s;
+}
+
+.pull-left.embed-article-img {
+	margin: $spacing-s  $spacing-s $spacing-s 0;
+}
+

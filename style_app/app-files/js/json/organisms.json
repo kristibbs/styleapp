@@ -1,0 +1,14 @@
+[    
+    {
+		"url": "#organism-header", 
+        "text": "Site header area",
+        "desc": "Header area of the site, includes the logo and main navigation",
+        "includepath": "<div ng-include=\"'app-files/molecules/organism-header.html'\"></div>"
+    },
+        {
+		"url": "#organism-footer", 
+        "text": "Site footer area",
+        "desc": "Footer area of the site",
+        "includepath": "<div ng-include=\"'app-files/molecules/organism-footer.html'\"></div>"
+    }
+]

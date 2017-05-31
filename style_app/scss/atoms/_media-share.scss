@@ -1,0 +1,93 @@
+/*--====================================
+========================================
+SOCIAL NETWORK SHARING BUTTONS
+========================================
+=====================================--*/
+
+.social-share { 
+	display: inline-block;
+	 width: 100%; 
+}
+.social-share .share { 
+	display: inline-block; 
+	vertical-align: top; 
+} 
+
+.share-facebook { 
+	background-color: $color-facebook; 
+	&:hover { 
+		background-color: darken($color-facebook, 8%) 
+	} 
+}
+.share-twitter { 
+	background-color: $color-twitter; 
+	&:hover { 
+		background-color: darken($color-twitter, 8%) 
+	}	
+}
+.share-googleplus { 
+	background-color: $color-google; 
+	&:hover { 
+		background-color: darken($color-google, 8%) 
+		} 
+	}
+.share-whatsapp { 
+	background-color: $color-whatsapp; 
+	&:hover { 
+		background-color: darken($color-whatsapp, 8%) 
+	}	
+	@include bp(m) {
+		display: none;
+	}
+}
+.share-linkedin     { 
+	background-color: $color-linkedin; 
+	&:hover { 
+		background-color: darken($color-linkedin, 8%) 
+	}	
+}
+.share-xing { 
+	background-color: $color-xing; 
+	&:hover { 
+		background-color: darken($color-xing, 8%) 
+	}	
+}
+
+.share-icon {   
+    border-radius: 50%;
+    height: 32px;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    fill: $brand-white;
+    margin-right: $spacing-xs;
+}
+
+
+// a bit of shame here due to bug fixing , couldve been done better (Miguel speaking)
+
+.footer-social ul.menu  li a svg { 
+	border-radius: 15%;
+	fill: white;
+	width: 44px;
+	height: 44px;
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	&:hover {
+		  transform: scale(1.10, 1.10);
+	}
+}
+
+
+a.socialmedia__linkedin svg {
+      background: $color-linkedin;
+}
+
+a.socialmedia__google svg { 
+	 background: $color-google;
+}
+
+a.socialmedia__twitter svg { 
+	 background: $color-twitter;
+}
