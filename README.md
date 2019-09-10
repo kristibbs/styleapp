@@ -24,5 +24,5 @@ The gulp file has reference to the wordpress paths, I have left this to show how
 
 Thats a very simple and brief oveview, but more in depth instructions/overview to be added
 
-Quick demo here: http://styleguide.kristibbs.co.uk/#/home
-Quick guide here: http://styleguide.kristibbs.co.uk/#/help-developer-guide
+Quick demo here: http://www.kristibbs.co.uk/styleapp/app-files/style_app/#/
+Quick guide here: http://www.kristibbs.co.uk/styleapp/app-files/style_app/#/help-developer-guide
